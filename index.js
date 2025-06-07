@@ -19,11 +19,11 @@ console.log(capitalizeFirstLetters(str1));
 //3. დაწერეთ ფუნქცია რომელიც მასივის შიდა ელემენტებს ამოკრეფს და გადააქცევს ერთ მთლიან მასივად
 const arr = [1, 2, 3, [4, 5], 6, [7, 8, 9]]; // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const mergeArrays = (input) => {
-    return input.reduce((acc, val) => {
-        if (Array.isArray(val)) {
-            return acc.concat(mergeArrays(val));
+    return input.reduce((let, num) => {
+        if (Array.isArray(num)) {
+            return let.concat(mergeArrays(num));
         }
-        return acc.concat(val);
+        return let.concat(num);
     }, []);
 }
 console.log(mergeArrays(arr));
